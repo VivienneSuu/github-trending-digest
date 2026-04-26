@@ -1,0 +1,45 @@
+{
+  "categories": [
+    {
+      "label": "AI / Machine Learning",
+      "key": "ai-ml",
+      "topics": ["machine-learning", "deep-learning", "artificial-intelligence", "llm", "neural-network", "nlp", "computer-vision", "generative-ai", "transformers", "reinforcement-learning"]
+    },
+    {
+      "label": "Developer Tools",
+      "key": "dev-tools",
+      "topics": ["developer-tools", "cli", "devtools", "productivity", "code-editor", "linting", "testing", "debugging", "ide", "sdk"]
+    },
+    {
+      "label": "Web Development",
+      "key": "web-dev",
+      "topics": ["web", "frontend", "backend", "javascript", "typescript", "react", "vue", "svelte", "nextjs", "api", "graphql", "rest-api"]
+    },
+    {
+      "label": "DevOps / Infrastructure",
+      "key": "devops",
+      "topics": ["devops", "kubernetes", "docker", "ci-cd", "infrastructure", "cloud", "monitoring", "observability", "terraform", "ansible", "helm"]
+    },
+    {
+      "label": "Security",
+      "key": "security",
+      "topics": ["security", "cybersecurity", "penetration-testing", "cryptography", "authentication", "privacy", "vulnerability", "hacking", "ctf"]
+    },
+    {
+      "label": "Data Science",
+      "key": "data-science",
+      "topics": ["data-science", "data-analysis", "visualization", "pandas", "jupyter", "statistics", "etl", "data-engineering", "analytics", "bigdata"]
+    },
+    {
+      "label": "Mobile",
+      "key": "mobile",
+      "topics": ["ios", "android", "react-native", "flutter", "mobile", "swift", "kotlin", "cross-platform"]
+    },
+    {
+      "label": "Gaming",
+      "key": "gaming",
+      "topics": ["game", "game-development", "gamedev", "unity", "unreal", "godot", "opengl", "vulkan", "webgl"]
+    }
+  ],
+  "note": "If categories is empty ([]), no topic filter is applied and all trending repos are included."
+}
