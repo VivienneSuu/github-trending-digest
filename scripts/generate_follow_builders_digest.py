@@ -220,7 +220,11 @@ def fallback_digest(source: dict[str, Any]) -> str:
 
 def build_digest(feeds: dict[str, Any]) -> str:
     source = build_source_payload(feeds)
-    digest = summarize_with_openai(source)
+    try:
+        digest = summarize_with_openai(source)
+    except Exception as exc:
+        print(f"Warning: OpenAI summary failed, falling back to rules-based digest: {exc}", file=sys.stderr)
+        digest = None
     if digest:
         return f"{digest}\n\nGenerated through the Follow Builders skill: https://github.com/zarazhangrui/follow-builders"
     return fallback_digest(source)
