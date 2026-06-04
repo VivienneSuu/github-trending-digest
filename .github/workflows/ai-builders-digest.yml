@@ -1,1 +1,30 @@
-.github/workflows/ai-builders-digest.yml
+name: AI Builders Telegram Digest
+
+on:
+  workflow_dispatch:
+  schedule:
+    # 09:00 Asia/Shanghai every day.
+    - cron: "0 1 * * *"
+
+jobs:
+  send-digest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Generate and send digest
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: ${{ vars.OPENAI_MODEL || 'gpt-4.1-mini' }}
+          TZ: Asia/Shanghai
+        run: python scripts/generate_follow_builders_digest.py
