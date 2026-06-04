@@ -2,6 +2,9 @@ name: AI Builders Telegram Digest
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - main
   schedule:
     # 09:00 Asia/Shanghai every day.
     - cron: "0 1 * * *"
